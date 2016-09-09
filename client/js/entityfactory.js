@@ -187,6 +187,10 @@ define(['mobs', 'items', 'npcs', 'warrior', 'chest'], function(Mobs, Items, NPCs
     EntityFactory.builders[Types.Entities.SORCERER] = function(id) {
         return new NPCs.Sorcerer(id);
     };
+    
+    EntityFactory.builders[Types.Entities.FIGHTERRED] = function(id) {
+        return new NPCs.Fighterred(id);
+    };
 
     EntityFactory.builders[Types.Entities.OCTOCAT] = function(id) {
         return new NPCs.Octocat(id);

@@ -64,6 +64,13 @@ define(['npc'], function(Npc) {
                 this.idleSpeed = 150;
             }
         }),
+        
+        Fighterred: Npc.extend({
+            init: function(id) {
+                this._super(id, Types.Entities.FIGHTERRED, 1);
+                this.idleSpeed = 150;
+            }
+        }),
 
         Priest: Npc.extend({
             init: function(id) {

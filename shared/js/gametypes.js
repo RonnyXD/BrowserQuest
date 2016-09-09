@@ -81,6 +81,7 @@ Types = {
         DESERTNPC: 53,
         LAVANPC: 54,
         CODER: 55,
+        FIGHTERRED: 67, //new_guardion
         
         // Weapons
         SWORD1: 60,

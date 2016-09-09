@@ -158,6 +158,11 @@ define(['character'], function(Character) {
         "othernpc": [
             "lorem ipsum",
             "lorem ipsum"
+        ],
+    
+        "fighterred": [
+            "Ket NAH",
+            "Классно, Молодец!!!"
         ]
     };
 
