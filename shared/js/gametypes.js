@@ -150,6 +150,7 @@ var kinds = {
     rick: [Types.Entities.RICK, "npc"],
     nyan: [Types.Entities.NYAN, "npc"],
     sorcerer: [Types.Entities.SORCERER, "npc"],
+    fighterred: [Types.Entities.FIGHTERRED, "npc"],
     agent: [Types.Entities.AGENT, "npc"],
     octocat: [Types.Entities.OCTOCAT, "npc"],
     beachnpc: [Types.Entities.BEACHNPC, "npc"],
