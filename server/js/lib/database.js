@@ -31,3 +31,5 @@ Database.prototype.GetById = function (table, id) {
     });
 
 }
+
+module.exports = Database;
