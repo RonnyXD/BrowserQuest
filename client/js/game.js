@@ -902,9 +902,10 @@ function(InfoManager, BubbleManager, Renderer, Map, Animation, Sprite, AnimatedT
                         var item = self.getItemAt(x, y);
                     
                         try {
+                            self.removeItem(item);
                             self.player.loot(item, self.storage);
                             self.client.sendLoot(item); // Notify the server that this item has been looted
-                            self.removeItem(item);
+                            //self.removeItem(item);
                             self.showNotification(item.getLootMessage());
                         
                             if(item.type === "armor") {
