@@ -21,7 +21,7 @@ define(['character', 'exceptions'], function(Character, Exceptions) {
             this.isSwitchingWeapon = true;
         },
     
-        loot: function(item) {
+        loot: function(item, storage) {
             if(item) {
                 var rank, currentRank, msg, currentArmorName;
             
@@ -43,8 +43,10 @@ define(['character', 'exceptions'], function(Character, Exceptions) {
 
                 if(rank && currentRank) {
                     if(rank === currentRank) {
+                        storage.addToInventory(item);
                         throw new Exceptions.LootException("You already have this "+item.type);
                     } else if(rank <= currentRank) {
+                        storage.addToInventory(item);
                         throw new Exceptions.LootException(msg);
                     }
                 }

@@ -902,8 +902,7 @@ function(InfoManager, BubbleManager, Renderer, Map, Animation, Sprite, AnimatedT
                         var item = self.getItemAt(x, y);
                     
                         try {
-                            self.player.loot(item);
-                            self.storage.addToInventory(item);
+                            self.player.loot(item, self.storage);
                             self.client.sendLoot(item); // Notify the server that this item has been looted
                             self.removeItem(item);
                             self.showNotification(item.getLootMessage());
