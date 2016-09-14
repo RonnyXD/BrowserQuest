@@ -6,3 +6,10 @@ config_local*
 client/audio/music
 .DS_Store
 *.swp
+.idea/BrowserQuest.iml
+.idea/copyright/profiles_settings.xml
+.idea/jsLibraryMappings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
