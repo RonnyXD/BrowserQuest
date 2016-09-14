@@ -171,7 +171,7 @@ define(function() {
 
         addToInventory: function(item) {
             inventory = this.getAllInventory();
-            inventory[inventory.count+1] = item;
+            inventory.push(item.kind);
             this.data.inventory = inventory;
             this.save();
             console.log(item);
