@@ -83,7 +83,6 @@ define(function() {
             this.setPlayerImage(img);
             this.setPlayerArmor(armor);
             this.setPlayerWeapon(weapon);
-            this.addToInventory(weapon);
         },
     
         // Achievements
@@ -175,6 +174,7 @@ define(function() {
             inventory[inventory.count+1] = item;
             this.data.inventory = inventory;
             this.save();
+            alert(item);
         }
     });
     

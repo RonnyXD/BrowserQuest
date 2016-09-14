@@ -903,6 +903,7 @@ function(InfoManager, BubbleManager, Renderer, Map, Animation, Sprite, AnimatedT
                     
                         try {
                             self.player.loot(item);
+                            self.storage.addToInventory(item);
                             self.client.sendLoot(item); // Notify the server that this item has been looted
                             self.removeItem(item);
                             self.showNotification(item.getLootMessage());
