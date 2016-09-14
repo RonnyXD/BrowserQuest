@@ -174,7 +174,7 @@ define(function() {
             inventory[inventory.count+1] = item;
             this.data.inventory = inventory;
             this.save();
-            alert(item);
+            console.log(item);
         }
     });
     
