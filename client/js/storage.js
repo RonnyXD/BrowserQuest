@@ -9,7 +9,7 @@ define(function() {
                 this.resetData();
             }
         },
-    
+
         resetData: function() {
             this.data = {
                 hasAlreadyPlayed: false,
@@ -26,7 +26,8 @@ define(function() {
                     totalKills: 0,
                     totalDmg: 0,
                     totalRevives: 0
-                }
+                },
+                inventory: []
             };
         },
     
@@ -82,6 +83,7 @@ define(function() {
             this.setPlayerImage(img);
             this.setPlayerArmor(armor);
             this.setPlayerWeapon(weapon);
+            this.addToInventory(weapon);
         },
     
         // Achievements
@@ -162,6 +164,18 @@ define(function() {
                 this.save();
             }
         },
+
+        // Inventory
+        getAllInventory: function() {
+            return this.data.inventory;
+        },
+
+        addToInventory: function(item) {
+            inventory = this.getAllInventory();
+            inventory[inventory.count+1] = item;
+            this.data.inventory = inventory;
+            this.save();
+        }
     });
     
     return Storage;
