@@ -407,6 +407,42 @@ define(['jquery', 'storage'], function($, Storage) {
             }
         },
 
+        //inventory popup open
+        toggleInventory: function() {
+            var currentState = $('#parchment').attr('class');
+
+            if(this.game.started) {
+                $('#parchment').removeClass().addClass('inventory');
+
+                $('body').toggleClass('inventory');
+
+                if(!this.game.player) {
+                    $('body').toggleClass('death');
+                }
+                if($('body').hasClass('inventory')) {
+                    this.closeInventory();
+                }
+            } else {
+                if(currentState !== 'animate') {
+                    if(currentState === 'inventory') {
+                        this.animateParchment(currentState, this.previousState);
+                    } else {
+                        this.animateParchment(currentState, 'inventory');
+                        this.previousState = currentState;
+                    }
+                }
+            }
+        },
+
+        //inventory popup open
+        closeInventory: function() {
+            $('body').removeClass('inventory');
+            $('#parchment').removeClass('inventory');
+            if(!this.game.player) {
+                $('body').addClass('death');
+            }
+        },
+
         closeInGameCredits: function() {
             $('body').removeClass('credits');
             $('#parchment').removeClass('credits');

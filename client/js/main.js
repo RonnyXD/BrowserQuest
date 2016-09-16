@@ -396,6 +396,13 @@ define(['jquery', 'app'], function($, App) {
                         $chat.focus();
                         return false;
                     }
+                    if(key === 73) {
+                        if($('body').hasClass("inventory")){
+                            app.closeInventory();
+                        }else{
+                            app.toggleInventory();
+                        }
+                    }
                 }
             });
             

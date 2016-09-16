@@ -34,19 +34,21 @@ define(['character', 'exceptions'], function(Character, Exceptions) {
                 if(item.type === "armor") {
                     rank = Types.getArmorRank(item.kind);
                     currentRank = Types.getArmorRank(Types.getKindFromString(currentArmorName));
-                    msg = "You are wearing a better armor";
+                    //msg = "You are wearing a better armor";
                 } else if(item.type === "weapon") {
                     rank = Types.getWeaponRank(item.kind);
                     currentRank = Types.getWeaponRank(Types.getKindFromString(this.weaponName));
-                    msg = "You are wielding a better weapon";
+                    //msg = "You are wielding a better weapon";
                 }
 
                 if(rank && currentRank) {
                     if(rank === currentRank) {
                         storage.addToInventory(item);
-                        throw new Exceptions.LootException("You already have this "+item.type);
+                        msg = item.itemKind+" added to inventory";
+                        throw new Exceptions.LootException(msg);
                     } else if(rank <= currentRank) {
                         storage.addToInventory(item);
+                        msg = item.itemKind+" added to inventory";
                         throw new Exceptions.LootException(msg);
                     }
                 }

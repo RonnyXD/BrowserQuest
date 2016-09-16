@@ -166,6 +166,10 @@ define(function() {
 
         // Inventory
         getAllInventory: function() {
+            if(!isset(this.data.inventory)){
+                var inventory = array();
+                this.data.push(inventory);
+            }
             return this.data.inventory;
         },
 
