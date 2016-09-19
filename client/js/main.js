@@ -364,6 +364,7 @@ define(['jquery', 'app'], function($, App) {
             $(document).bind("keydown", function(e) {
             	var key = e.which,
             	    $chat = $('#chatinput');
+                console.log(key);
 
                 if($('#chatinput:focus').size() == 0 && $('#nameinput:focus').size() == 0) {
                     if(key === 13) { // Enter
@@ -395,13 +396,6 @@ define(['jquery', 'app'], function($, App) {
                     if(key === 13 && game.ready) {
                         $chat.focus();
                         return false;
-                    }
-                    if(key === 73) {
-                        if($('body').hasClass("inventory")){
-                            app.closeInventory();
-                        }else{
-                            app.toggleInventory();
-                        }
                     }
                 }
             });
