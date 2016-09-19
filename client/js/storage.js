@@ -166,7 +166,9 @@ define(function() {
 
         // Inventory
         getAllInventory: function() {
-            if(!isset(this.data.inventory)){
+            if(this.data.inventory){
+
+            }else{
                 var inventory = array();
                 this.data.push(inventory);
             }
