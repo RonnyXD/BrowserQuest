@@ -408,28 +408,31 @@ define(['jquery', 'storage'], function($, Storage) {
         },
 
         //inventory popup open
+        
         toggleInventory: function() {
             var currentState = $('#parchment').attr('class');
 
             if(this.game.started) {
                 $('#parchment').removeClass().addClass('inventory');
-
                 $('body').toggleClass('inventory');
-
                 if(!this.game.player) {
                     $('body').toggleClass('death');
                 }
-                if($('body').hasClass('inventory')) {
-                    this.closeInventory();
+                if($('body').hasClass('credits')) {
+                    this.closeInGameCredits();
                 }
             } else {
                 if(currentState !== 'animate') {
                     if(currentState === 'inventory') {
-                        this.animateParchment(currentState, this.previousState);
+                        if(localStorage && localStorage.data) {
+                            this.animateParchment(currentState, 'loadcharacter');
+                        } else {
+                            this.animateParchment(currentState, 'createcharacter');
+                        }
                     } else {
-                        this.animateParchment(currentState, 'inventory');
-                        this.previousState = currentState;
-                    }
+            	        this.animateParchment(currentState, 'inventory');
+            	        this.previousState = currentState;
+            	    }
                 }
             }
         },
